@@ -31,31 +31,24 @@ RUN chmod -R 777 /home/pau
 
 # CREATING DESIRED FOLDER STRUCTURE
 
-
-# 
-IF...
 WORKDIR /the/workdir/path
-RUN wget https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tgz
 
 
+# IF tool=python...etc
 # INSTALLING PYTHON3
 #INSTALLING PIP
-
 # INSTALLING VENV
 
 
 # INSTALLING .NET CORE
 
 
-
-
-#WORKDIR en comptes de cd
-#RUN echo "$type"
-#-v /var/run/docker.sock:/var/run/docker.sock
-
+#RUN echo "$tool"
 
 #POSAR ALIAS AL BASHRC ()
 
 #INSTALAR VUNDLE GIT ETC?
+
+#Install VSCODE
 
 #change to user pau

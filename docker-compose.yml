@@ -13,3 +13,4 @@ services:
             - "8080:8080"
         volumes:
             - Personal_Dev_Env_Volume:/home/pau
+            - var/run/docker.sock:/var/run/docker.sock
