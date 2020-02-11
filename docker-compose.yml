@@ -1,0 +1,15 @@
+version: '3.7'
+services: 
+    personal_Dev_Env:
+        container_name: Personal_Dev_Env_Container
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                tool: "python" #Options: python, dotnet, all
+        image: Personal_Dev_Env_Image
+        ports:
+            - "8080:8080"
+        volumes:
+            - Personal_Dev_Env_Volume:/home/pau
