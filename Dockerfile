@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ARG tool
+#ARG tool
 
 # UP TO DATE UPDATES
 RUN apt-get update \
@@ -20,35 +20,32 @@ RUN apt-get update \
     libnss3-dev \
     libreadline-dev \
     libffi-dev \
+    python-dev
 
 # CREATING USER AND PERMISSIONS
 RUN mkdir /home/pau
 WORKDIR /home/pau
+#RUN chmod -R 777 /home/pau
 
-RUN chmod -R 777 /home/pau
-
-#add pau as sudo
-
-# CREATING DESIRED FOLDER STRUCTURE
-
-WORKDIR /the/workdir/path
-
-
-# IF tool=python...etc
-# INSTALLING PYTHON3
-#INSTALLING PIP
-# INSTALLING VENV
-
+# INSTALLING PYTHON3 PIP and VENV
+RUN apt-get -y install \
+    python3-pip \
+    python3-venv \
+    && mkdir python_environments
 
 # INSTALLING .NET CORE
+RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
+    && dpkg -i packages-microsoft-prod.deb \
+    && add-apt-repository universe \
+    && apt-get update \
+    && apt-get -y install apt-transport-https \
+    && apt-get update \
+    && apt-get -y install dotnet-sdk-3.1
 
+#Copiar .BASHRC
+COPY ./.bashrc ~/.bashrc
 
-#RUN echo "$tool"
-
-#POSAR ALIAS AL BASHRC ()
+#Copiar .VIMRC
+#COPY 
 
 #INSTALAR VUNDLE GIT ETC?
-
-#Install VSCODE
-
-#change to user pau

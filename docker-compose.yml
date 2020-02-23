@@ -4,11 +4,11 @@ services:
         container_name: Personal_Dev_Env_Container
         restart: always
         build:
-            context: .
-            dockerfile: Dockerfile
-            args:
-                tool: "python" #Options: python, dotnet, all
-        image: Personal_Dev_Env_Image
+            #context: .
+            #dockerfile: Dockerfile
+            #args:
+            #    tool: "python" #Options: python, dotnet, all
+        image: pausc/Personal_Dev_Env_Image:1.0
         ports:
             - "8080:8080"
         volumes:
